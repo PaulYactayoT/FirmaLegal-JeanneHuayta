@@ -1,0 +1,26 @@
+<section class="page-header">
+    <div class="container">
+        <h1>Nuestro Equipo</h1>
+        <p class="lead">Expertos dedicados a su éxito.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="team-grid">
+            <div class="team-card" *ngFor="let member of team">
+                <div class="image-wrapper">
+                    <img [src]="member.image" [alt]="member.name">
+                </div>
+                <div class="member-info">
+                    <h3>{{ member.name }}</h3>
+                    <p class="role">{{ member.role }}</p>
+                    <div class="divider"></div>
+                    <ul class="specialties">
+                        <li *ngFor="let spec of member.specialties">{{ spec }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

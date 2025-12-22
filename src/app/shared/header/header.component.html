@@ -1,0 +1,22 @@
+<header [class.scrolled]="isScrolled">
+    <div class="container header-content">
+        <a routerLink="/" class="logo">
+            <img src="assets/logo.png" alt="Jeanne Huayta Firma Legal" class="logo-img">
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+                </li>
+                <li><a routerLink="/about" routerLinkActive="active">La Firma</a></li>
+                <li><a routerLink="/services" routerLinkActive="active">Servicios</a></li>
+                <li><a routerLink="/team" routerLinkActive="active">Equipo</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <a routerLink="/contact" class="btn btn-primary d-none-mobile">CONSULTA INICIAL</a>
+
+        <!-- Mobile Menu Toggle (can be added later if needed) -->
+    </div>
+</header>

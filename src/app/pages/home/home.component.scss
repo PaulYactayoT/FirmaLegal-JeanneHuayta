@@ -1,0 +1,246 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: #000; // Deep fallback
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    overflow: hidden;
+
+    .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 5%; // Raised more as requested to show scales better
+        z-index: 1;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); // Subtle overlay for text readability
+        z-index: 2;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: 8px;
+        margin-bottom: 0.5rem;
+        color: var(--color-white);
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        @media (max-width: 768px) {
+            font-size: 3rem;
+            letter-spacing: 4px;
+        }
+    }
+
+    .hero-brand-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 0.5rem;
+
+        .line {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .brand-text {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            color: var(--color-accent);
+            white-space: nowrap;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+                letter-spacing: 3px;
+            }
+        }
+    }
+
+    .hero-brand-motto {
+        font-size: 1.1rem;
+        letter-spacing: 12px;
+        font-weight: 300;
+        color: var(--color-white);
+        margin-bottom: 3rem;
+        opacity: 0.9;
+
+        @media (max-width: 768px) {
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+        }
+    }
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-light {
+        border: 2px solid var(--color-white);
+        color: var(--color-white);
+
+        &:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+    }
+
+    .btn-primary {
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.section-badge {
+    display: inline-block;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 5px;
+}
+
+.section-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
+}
+
+.highlights {
+    background-color: var(--color-white);
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    padding: 0; // Remove general padding to allow image to be full width
+    background-color: var(--color-bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; // Ensure image corners are clipped
+    display: flex;
+    flex-direction: column;
+
+    .card-image-wrapper {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+    }
+
+    // Add back padding for text content
+    h3,
+    p,
+    .text-link,
+    .icon {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    h3 {
+        margin-top: 2rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+    }
+
+    .text-link {
+        margin-bottom: 2.5rem;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--color-accent);
+
+        .card-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .icon {
+            transform: scale(1.1);
+        }
+    }
+
+    .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+    }
+
+    .text-link {
+        color: var(--color-accent);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+            color: var(--color-accent-hover);
+        }
+    }
+}

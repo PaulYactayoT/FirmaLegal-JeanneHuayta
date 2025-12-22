@@ -1,0 +1,8 @@
+main {
+    /* Add padding to account for fixed header */
+    padding-top: 80px;
+    min-height: 80vh;
+    /* Ensure footer stays at bottom if content is short */
+    display: flex;
+    flex-direction: column;
+}

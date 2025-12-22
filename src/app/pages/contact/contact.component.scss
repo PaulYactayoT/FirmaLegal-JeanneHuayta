@@ -1,0 +1,141 @@
+.page-header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 8rem 0 4rem;
+    text-align: center;
+
+    h1 {
+        color: var(--color-white);
+    }
+
+    .lead {
+        color: var(--color-accent);
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item {
+    margin-bottom: 2rem;
+
+    strong {
+        display: block;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    p {
+        color: var(--color-text-light);
+    }
+}
+
+.contact-form {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--color-primary);
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 2px;
+        font-family: var(--font-body);
+        transition: all 0.3s;
+
+        &:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1);
+        }
+    }
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+// Inline Toast Notification Styles
+.inline-toast {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--color-accent); // Gold accent for success
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    &.error {
+        border-left-color: #ef4444; // Red for error
+        background: #fef2f2;
+    }
+
+    .toast-icon {
+        display: flex;
+        align-items: center;
+        color: var(--color-accent);
+
+        .svg-icon {
+            width: 20px;
+            height: 20px;
+
+            &.success-visual {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    &.error .toast-icon {
+        color: #ef4444;
+    }
+
+    .toast-message {
+        margin: 0;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: var(--color-primary);
+    }
+}

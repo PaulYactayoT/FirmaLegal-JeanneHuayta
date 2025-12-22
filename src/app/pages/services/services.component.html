@@ -1,0 +1,23 @@
+<section class="page-header">
+    <div class="container">
+        <h1>Áreas de Práctica</h1>
+        <p class="lead">Soluciones integrales para desafíos complejos.</p>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card" *ngFor="let service of services">
+                <div class="service-image-wrapper" *ngIf="service.image">
+                    <img [src]="service.image" [alt]="service.title">
+                </div>
+                <div class="icon" *ngIf="!service.image">{{ service.icon }}</div>
+                <div class="service-content">
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.desc }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
