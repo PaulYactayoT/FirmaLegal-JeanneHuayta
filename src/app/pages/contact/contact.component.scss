@@ -4,6 +4,10 @@
     padding: 8rem 0 4rem;
     text-align: center;
 
+    @media (max-width: 768px) {
+        padding: 6rem 0 3rem;
+    }
+
     h1 {
         color: var(--color-white);
     }
@@ -12,6 +16,7 @@
         color: var(--color-accent);
         font-size: 1.25rem;
         font-weight: 300;
+        padding: 0 1rem;
     }
 }
 
@@ -20,13 +25,18 @@
     grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }
 
 .info-item {
     margin-bottom: 2rem;
+
+    @media (max-width: 991px) {
+        text-align: center;
+    }
 
     strong {
         display: block;
@@ -45,6 +55,10 @@
     padding: 2.5rem;
     border-radius: 4px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 576px) {
+        padding: 1.5rem;
+    }
 }
 
 .form-group {
@@ -84,6 +98,21 @@
     align-items: center;
     gap: 1.5rem;
     margin-top: 2rem;
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+
+        .btn {
+            width: 100%;
+        }
+
+        .inline-toast {
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }
 
 // Inline Toast Notification Styles

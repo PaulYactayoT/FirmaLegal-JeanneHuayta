@@ -1,22 +1,23 @@
 <section class="page-header">
-    <div class="container">
-        <h1>Nuestro Equipo</h1>
-        <p class="lead">Expertos dedicados a su éxito.</p>
+    <div class="container animate-reveal">
+        <h1 class="animate-typewriter">Nuestro Equipo</h1>
+        <p class="lead animate-fade delay-1">Expertos dedicados a su éxito.</p>
     </div>
 </section>
 
 <section class="section-padding">
     <div class="container">
         <div class="team-grid">
-            <div class="team-card" *ngFor="let member of team">
-                <div class="image-wrapper">
+            <div class="team-card animate-slide-short parallax-soft" *ngFor="let member of team; let i = index"
+                [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="image-wrapper animate-img-focus animate-light-sweep">
                     <img [src]="member.image" [alt]="member.name">
                 </div>
                 <div class="member-info">
-                    <h3>{{ member.name }}</h3>
-                    <p class="role">{{ member.role }}</p>
-                    <div class="divider"></div>
-                    <ul class="specialties">
+                    <h3 class="animate-reveal">{{ member.name }}</h3>
+                    <p class="role animate-fade">{{ member.role }}</p>
+                    <div class="divider animate-fade"></div>
+                    <ul class="specialties animate-slide-short">
                         <li *ngFor="let spec of member.specialties">{{ spec }}</li>
                     </ul>
                 </div>

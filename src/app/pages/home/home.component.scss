@@ -101,6 +101,16 @@
     align-items: center;
     margin-top: 1rem;
 
+    @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
     .btn {
         padding: 1rem 2rem;
         border-radius: 4px;

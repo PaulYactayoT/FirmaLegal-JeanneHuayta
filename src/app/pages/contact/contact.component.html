@@ -1,16 +1,17 @@
 <section class="page-header">
-    <div class="container">
-        <h1>Contacto</h1>
-        <p class="lead">Estamos aquí para escucharle y defender sus intereses.</p>
+    <div class="container animate-reveal">
+        <h1 class="animate-typewriter">Contacto</h1>
+        <p class="lead animate-fade delay-1">Estamos aquí para escucharle y defender sus intereses.</p>
     </div>
 </section>
 
 <section class="section-padding">
     <div class="container">
         <div class="contact-layout">
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <p>Visítenos en nuestras oficinas o contáctenos por teléfono o correo electrónico.</p>
+            <div class="contact-info animate-slide-short">
+                <h3 class="animate-reveal">Información de Contacto</h3>
+                <p class="animate-fade delay-1">Visítenos en nuestras oficinas o contáctenos por teléfono o correo
+                    electrónico.</p>
 
                 <div class="info-item">
                     <strong>Dirección</strong>
@@ -28,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form" id="contact-form">
                 <h3>Envíenos un Mensaje</h3>
                 <form (submit)="onSubmit($event)">
                     <div class="form-group">

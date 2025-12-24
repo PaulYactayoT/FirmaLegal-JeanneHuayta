@@ -1,22 +1,29 @@
 <header [class.scrolled]="isScrolled">
     <div class="container header-content">
-        <a routerLink="/" class="logo">
+        <a routerLink="/" class="logo animate-light-sweep">
             <img src="assets/logo.png" alt="Jeanne Huayta Firma Legal" class="logo-img">
         </a>
 
-        <nav>
+        <nav [class.is-open]="isMenuOpen">
             <ul class="nav-links">
-                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                        (click)="closeMenu()">Inicio</a>
                 </li>
-                <li><a routerLink="/about" routerLinkActive="active">La Firma</a></li>
-                <li><a routerLink="/services" routerLinkActive="active">Servicios</a></li>
-                <li><a routerLink="/team" routerLinkActive="active">Equipo</a></li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contacto</a></li>
+                <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">La Firma</a></li>
+                <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Servicios</a></li>
+                <li><a routerLink="/team" routerLinkActive="active" (click)="closeMenu()">Equipo</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
             </ul>
         </nav>
 
         <a routerLink="/contact" class="btn btn-primary d-none-mobile">CONSULTA INICIAL</a>
 
-        <!-- Mobile Menu Toggle (can be added later if needed) -->
+        <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="header-overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>
     </div>
 </header>
