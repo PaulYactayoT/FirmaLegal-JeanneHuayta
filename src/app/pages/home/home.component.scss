@@ -17,6 +17,15 @@
         object-fit: cover;
         object-position: center 5%; // Raised more as requested to show scales better
         z-index: 1;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        background: url('/assets/responsive-bg.jpg') no-repeat center center;
+        background-size: cover;
     }
 
     .hero-overlay {
